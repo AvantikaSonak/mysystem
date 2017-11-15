@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<!--[if lte IE 9]>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.0/jquery.xdomainrequest.min.js'></script>
+<![endif]-->
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/selectedTrainId.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+
+	$(document).ready(function() {	
+		$("#selectedTrainIdSubmit").click(function(){
+			var scac= $("#selectedRailroadscac").val();
+	    	var sendingReason= $("#sendingReason").val();
+	    	var clearanceNumber= $("#clearanceNumber").val();
+	    	var trainId= $("#trainId").val();
+	    	var employeeIdentifier= $("#employeeIdentifier").val();
+	    	var employeeFirstName= $("#employeeFirstName").val();
+	    	var employeeMiddleIntial= $("#employeeMiddleIntial").val();
+	    	var employeeLastName= $("#employeeLastName").val();
+	    	var onboardSoftwareVersion= $("#onboardSoftwareVersion").val();
+	    	var configurationFilesetVersion= $("#configurationFilesetVersion").val();
+	    	var railroadSpecificConfigurationFileVersion= $("#railroadSpecificConfigurationFileVersion").val();
+	    	var postVar = JSON.stringify({
+	    									scac:scac,
+	    									sendingReason:sendingReason,
+	    									clearanceNumber:clearanceNumber,
+	    									trainId:trainId,
+	    									employeeIdentifier:employeeIdentifier,
+	    									employeeFirstName:employeeFirstName,
+	    									employeeMiddleIntial:employeeMiddleIntial,
+	    									employeeLastName:employeeLastName,
+	    									onboardSoftwareVersion:onboardSoftwareVersion,
+	    									configurationFilesetVersion:configurationFilesetVersion,
+	    									railroadSpecificConfigurationFileVersion:railroadSpecificConfigurationFileVersion
+	    									});
+	        $.post("<URL>",postVar);  
+	        alert('post'+postVar);
+	        window.location.href = "./confirmationTrainId.html";
+		}); 
+	});
+</script>
+</head>
+<!-- <body>
+
+	<nav class="navbar navbar-default">	
+		<div class="container-fluid" style="height: 7em;" id="empResp">
+		<div id="caption1"> <span >Place holder for page title</span></div>
+			<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo3">
+			<img src="../dist/custom/images/tesco.jpg" class="logo_dashboard">
+		</div>	
+	</nav>		
+		 <div><br> <span class="category_title" >Confirmation of Selected Train ID  01004 </span> <br> <br>  </div>
+		 <div id="verify_request_content" class="jumbotron" > 
+			<div style="width: 21%; float: left; margin-left: 7%;">
+				<b>
+					<span class="line_height" >Railroad SCAC : </span><br> <br>
+					<span class="line_height">Reason for Sending :</span><br> <br>					
+					<span class="line_height">Clearance Number :</span><br> <br>
+					<span class="line_height">Train Id :</span><br> <br>
+					<span class="line_height">Employee Identifier :</span><br> <br>
+					<span class="line_height">Employee First Name :</span><br> <br>
+					<span class="line_height">Employee Middle Initial :</span><br> <br>
+					<span class="line_height">Employee Last Name :</span><br> <br>
+					<span class="line_height">Onboard Software Version :</span><br> <br>
+					<span class="line_height">Common Configuration Fileset Version :</span><br> <br>
+					<span class="line_height">Railroad Specific Configuration File Version :</span><br> <br>
+				</b> 					
+			</div>
+			<input type="text" id="selectedRailroadscac"   size="25"> <br> <br> 
+			<input type="text" id="sendingReason"  size="25"><br> <br>
+			<input type="text" id="clearanceNumber"   size="25"><br> <br> 
+			<input type="text" id="trainId"   size="25"> <br> <br> 
+			<input type="text" id="employeeIdentifier"  size="25"><br> <br>
+			<input type="text" id="employeeFirstName"   size="25"><br> <br> 
+			<input type="text" id="employeeMiddleIntial"   size="25"> <br> <br> 
+			<input type="text" id="employeeLastName"  size="25"><br> <br>
+			<input type="text" id="onboardSoftwareVersion"   size="25"><br> <br> 
+			<input type="text" id="configurationFilesetVersion"   size="25"> <br> <br> <br>
+			<input type="text" id="railroadSpecificConfigurationFileVersion"  size="25"><br> <br>
+		</div>	
+		<div id="navButtons">
+			<button id="selectedTrainIdSubmit">Submit</button>
+		</div>			
+		<div id="footer" class="footer_class">
+	<p class="footer_2"><a href="./Terms.html">Terms of Use</a> | <a href="./Privacy.html">Privacy Policy</a> | <a href="./Contact.html">Contact Us</a> |
+	<a href="./Site.html">Site Map</a> | <a href="./Feedback.html">Feedback Report</a> | <a href="./Inquiry.html">General Inquiries</a>
+© 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>
+
+</body> -->
+
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid" style="height: 8em;">
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">CI BOS and LOCO Dashboard</div></a>
+     <img src="../dist/custom/images/tesco.jpg" class="logo" style="margin-top: -42px;">
+	<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo2" style="margin-top: -45px;margin-left: -15px;">
+          <div class="header_menu" style="margin-top: -10px;">			
+					<div class="btn-group">
+                        <button type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" class="btn btn-default dropdown-toggle products_button">
+                            Main Menu
+                            <Action></Action>
+                            <span class="caret caret_spacing"></span></button>
+                        <ul class="dropdown-menu">
+							<li><a href="./employeeRequest.html">Employee Authentication</a></li>
+
+							<li><a href="./onboardComponentConfigRequest.html">Component Configuration - Onboard</a></li>
+							<li><a href="./xvz.html">Configuration Version List</a></li>
+                            
+                            <li><a href="./trainConsistsRequest.html">Train Consist</a></li>
+							<li><a href="./onBoardTrainConsist.html">Train Consist - Onboard</a></li>
+							
+							<li><a href="./requestTrainList.html">Train ID List</a></li>
+							<li><a href="./selectedTrainId.html">Train ID - Selected</a></li>
+							
+							<li><a href="./requestTrainSubDivisionList.html">Sub Division Details</a></li>
+							<li><a href="./locomotivedeparturereport.html">Departure Test</a></li>					
+							
+                        </ul>
+                    </div>
+               	<a class = "board" style="margin-left: 5%;" href="./helpMsg.html">Help</a>
+					<a  class = "board"  href="./index.html">Logout</a>               
+            </div>
+        </div>
+</nav>
+<!-- 	<div>
+		<br> <span class="category_title">Verify Employee Info Request 02000 </span> <br> <br>
+	</div> -->
+	<div id="content" class="jumbotron">
+	<span class="category_title" style="margin-right: 3em"><u>Selected Train ID (02003) </u></span><br><br>
+<div class="supplier-div welcome_inner">
+	<!-- <div id="verify_request_content" class="jumbotron"> -->
+		<div style="width: 27%; float: left; margin-left: 7%;">
+		<br>
+			<b> 
+				<span class="line_height" >Railroad SCAC : </span><br> <br>
+					<span class="line_height">Reason for Sending :</span><br> <br>					
+					<span class="line_height">Clearance Number :</span><br> <br>
+					<span class="line_height">Train Id :</span><br> <br>
+					<span class="line_height">Employee Identifier :</span><br> <br>
+					<span class="line_height">Employee First Name :</span><br> <br>
+					<span class="line_height">Employee Middle Initial :</span><br> <br>
+					<span class="line_height">Employee Last Name :</span><br> <br>
+					<span class="line_height">Onboard Software Version :</span><br> <br>
+					<span class="line_height">Common Configuration Fileset Version :</span><br> <br>
+					<span class="line_height">Railroad Specific Configuration File Version :</span><br> <br>			
+			</b>
+		</div>
+		<div id="employeeInfoSubmit">
+		<br>
+		<input type="text" id="selectedRailroadscac"   size="25"> <br> <br> 
+			<input type="text" id="sendingReason"  size="25"><br> <br>
+			<input type="text" id="clearanceNumber"   size="25"><br> <br> 
+			<input type="text" id="trainId"   size="25"> <br> <br> 
+			<input type="text" id="employeeIdentifier"  size="25"><br> <br>
+			<input type="text" id="employeeFirstName"   size="25"><br> <br> 
+			<input type="text" id="employeeMiddleIntial"   size="25"> <br> <br> 
+			<input type="text" id="employeeLastName"  size="25"><br> <br>
+			<input type="text" id="onboardSoftwareVersion"   size="25"><br> <br> 
+			<input type="text" id="configurationFilesetVersion"   size="25"> <br> <br> <br>
+			<input type="text" id="railroadSpecificConfigurationFileVersion"  size="25"><br> <br>	
+		</div>		
+		<div class="btn-group">
+		<br>
+		<button class="btn btn-default submit_butt" id="selectedTrainIdSubmit" style="margin-left: 3em"><b>Submit</b></button>
+		</div>
+	</div>		
+</div>
+<div>
+	<!-- <p class="footer_dashboard"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#" >Contact Us</a> |
+	<a href="#" >Site Map</a> | <a href="#">Feedback Report</a> | <a href="#">General Inquiries</a>
+&copy; 2017 Tech Mahindra. All Rights Reserved.</p> -->
+<div id="footer" class="footer_class">
+       <p class="footer_dashboard"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#" >Contact Us</a> |
+       <a href="#" >Site Map</a> | <a href="#">Feedback Report</a> | <a href="#">General Inquiries</a>
+&copy; 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>
+
+
+
+<!--<p class="footer_2">Terms of Use | Privacy Policy | Contact Us | Site Map | Feedback Report | General Inquiries
+Ã‚Â© 2016 Tech Mahindra. All Rights Reserved.</p>-->
+</div>	
+</body>
+</html>

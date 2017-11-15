@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<!--[if lte IE 9]>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.0/jquery.xdomainrequest.min.js'></script>
+<![endif]-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/softwareCompatibility.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script type="application/javascript">
+	$(document).ready(function() {		
+		componentConfigReport();
+		componentConfigAck();
+	});
+</script>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+    <div class="container-fluid" style="height: 8em;">
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">CI BOS and LOCO System</div></a>
+     <img src="../dist/custom/images/tesco.jpg" class="logo" style="margin-top: -42px;">
+	<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo2" style="margin-top: -45px;margin-left: -15px;">
+          <div class="header_menu" style="margin-top: -10px;">			
+					
+                 <a class = "board" style="margin-left: 5%;" href="./dashboard2.html">Dashboard</a>   
+               	<a class = "board" style="margin-left: 5%;" href="./helpMsg.html">Help</a>
+					<a  class = "board"  href="./index.html">Logout</a>               
+            </div>
+        </div>
+</nav>		
+
+<div id="content" class="jumbotron verify_emp">
+<div class="supplier-div verify_emp_inner"><br>
+	<span class="category_title"><u>Onboard Component Configuration Report (02088)</u></span>
+	<br><br>
+        <!-- <hr class="hr_divider"> -->
+<div style="width:50%;float:left">
+<div style="width:43%;float:left;margin-left:7%;">
+<span class="line_height">Railroad SCAC :</span><br><br>
+ <span class="line_height" >ICD Version :</span><br><br>
+ <span class="line_height">Reason for sending :</span> <br><br>  
+  <span class="line_height">Vendor Code :</span><br><br>
+    <span class="line_height">System Code :</span><br><br>
+    <!-- comes as a list of component and inside component another list of configuration -->
+	  <span class="line_height">Component :</span><br><br>
+	    <span class="line_height">Configuration Item Code :</span><br><br>
+		  <span class="line_height">Configuration Item Text :</span><br><br>
+</div>
+		     <span id="scac"></span><br><br>			
+             <span id="icd"></span><br><br>
+             <span id="reason"></span><br><br>
+			  <span id="vendorCode"></span><br><br>				
+			 <span id="systemCode"></span><br><br>
+			 <!-- comes as a list of component and inside component another list of configuration -->
+			  <input type="text" placeholder="2"><br><br>				
+			  <input type="text" placeholder="6"><br><br>
+			  <input type="text" placeholder="BOS configuration"><br><br>
+ </div>
+ <div class="btn-group" style="margin-bottom: -750px;margin-left: -60px;">		
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 1em"><b>Acknowledge Data</b></button>
+		</div>
+ </div>
+ <br>
+ <br>
+</div>
+<div id="footer" class="footer_class" style="margin-bottom: -70px">
+	<p class="footer_2"><a href="./Terms.html">Terms of Use</a> | <a href="./Privacy.html">Privacy Policy</a> | <a href="./Contact.html">Contact Us</a> |
+	<a href="./Site.html">Site Map</a> | <a href="./Feedback.html">Feedback Report</a> | <a href="./Inquiry.html">General Inquiries</a>
+© 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>	
+
+</body>
+</html>

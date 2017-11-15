@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head><title></title>
+<meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+    <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../src/trainConsists.js"></script>
+    <link rel="stylesheet" href="../dist/custom/style.css">
+    <link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+    <script>
+	var d = new Date("November 14, 2017 11:13:00");
+	document.getElementById("lastLogin").innerHTML = d;
+	</script>
+    <script type="application/javascript">
+	$(document).ready(function() {	
+		
+		new Chart(document.getElementById("bar-chart"), {
+		    type: 'bar',
+		    data: {
+		      labels: ["11-15-2017", "11-14-2017", "11-13-2017", "11-12-2017", "11-11-2017"],
+		      datasets: [
+		        {
+		          label: "Population (millions)",
+		          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+		          data: [2478,5267,734,784,433]
+		        }
+		      ]
+		    },
+		    options: {
+		      legend: { display: false },
+		      title: {
+		        display: true,
+		        text: 'Locomotives connecting to CI BOS in last 5 days'
+		      }
+		    }
+		});
+		
+		
+		new Chart(document.getElementById("pie-chart"), {
+		    type: 'pie',
+		    data: {
+		      labels: ["11-15-2017", "11-14-2017", "11-13-2017", "11-12-2017", "11-11-2017"],
+		      datasets: [{
+		        label: "Population (millions)",
+		        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+		        data: [2478,5267,734,784,433]
+		      }]
+		    },
+		    options: {
+		      title: {
+		        display: true,
+		        text: 'Locomotives connecting to CI BOS in last 5 days'
+		      }
+		    }
+		});
+		
+		
+		
+		$.ajax({
+  		  url: "http://10.53.17.48:53905/CIBOSSServices//service/trainsatglancereport/",
+  		  type: "get", 
+  		  data: { 	},
+  		  success: function(response) {
+  		   			console.log(JSON.stringify(response));
+  		   			var trainAtGlance = response;
+  		   			var i=0;
+	  		   		$.each(trainAtGlance, function(i, ele) {	
+	  		   			var trainIDDD = trainAtGlance[i].trainId;	  
+	  		   			var details = trainAtGlance[i].details;
+	  					$("#trainAtGlanceTable").append("<tr><td>" + (i+1) + "</td><td>" +
+	  							trainAtGlance[i].dateAndTime + "</td><td>" + 	
+	  							'<a onClick="openConsist(\''+trainIDDD+'\');">'+
+	  							trainAtGlance[i].trainId+"<a>" + "</td><td>" +	  							
+	  							trainAtGlance[i].locoId + "</td><td>" + 
+	  							trainAtGlance[i].crew + "</td><td>" + 
+	  							'<a onClick="openDeparture(\''+trainIDDD+'\');">'+"+"
+	  							+"</a>"+ "</td></tr>");
+	  				});
+  		  		},
+  		  error: function(xhr) {
+  		    	console.log(xhr);
+  		  }
+		});
+		
+		
+		$.ajax({
+	  		  url: "http://10.53.17.48:53905/CIBOSSServices//service/trainconsistreport/",
+	  		  type: "get", 
+	  		  data: { 	},
+	  		  success: function(response) {
+	  		   			console.log(JSON.stringify(response));
+	  		   			var trainConsist = response;
+  		   				var i=0;
+	  		   			$.each(trainConsist, function(i, ele) {	
+	  		   			var trainIDDD = trainConsist[i].trainId;	  
+	  						$("#trainConsistTable").append("<tr><td>" + (i+1) + "</td><td>" + 
+	  								trainConsist[i].dateAndTime + "</td><td>" + 
+	  								'<a onClick="openConsist(\''+trainIDDD+'\');">'+
+	  								trainConsist[i].trainId+"<a>" + "</td><td>" +	  	
+	  								trainConsist[i].locoId + "</td><td>" + 
+	  								trainConsist[i].crew + "</td><td>" + 
+	  								trainConsist[i].clearanceNumber + "</td><td>" + 
+	  								trainConsist[i].lastModified + "</td></tr>");
+	  					});
+	  		  		},
+	  		  error: function(xhr) {
+	  		    	console.log(xhr);
+	  		  }
+			});
+		
+		// Crew Authorization
+		
+		$.ajax({
+	  		  url: "http://10.53.17.48:53905/CIBOSSServices//service/crewauthreport/",
+	  		  type: "get", 
+	  		  data: { 	},
+	  		  success: function(response) {
+	  		   			console.log(JSON.stringify(response));
+	  		   			var crewData = response;
+  		   				var i=0;
+	  		   			$.each(crewData, function(i, ele) {	
+	  		   			var empId = crewData[i].empid;	  
+	  						$("#crewAuthTable").append("<tr><td>" + (i+1) + "</td><td>" + 
+	  								crewData[i].dateAndTime + "</td><td>" + 
+	  								'<a onClick="openEmpVerification(\''+empId+'\');">'+
+	  								crewData[i].crew+"<a>" + "</td><td>" +	  	
+	  								crewData[i].reasonforAuth + "</td><td>" + 
+	  								crewData[i].status + "</td><td>" + 
+	  								crewData[i].trainId + "</td><td>" + 
+	  								crewData[i].locoId + "</td><td>"+
+	  								crewData[i].onboardSerVersion + "</td></tr>");
+	  					});
+	  		  		},
+	  		  error: function(xhr) {
+	  		    	console.log(xhr);
+	  		  }
+			});
+		
+		
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		    }
+			document.getElementById("dashboardShow").style.display = "block";
+			$(".tablinks").click(function (event) {
+				var i, tabcontent, tablinks;
+				tabcontent = document.getElementsByClassName("tabcontent");
+				
+				for (i = 0; i < tabcontent.length; i++) {
+			        tabcontent[i].style.display = "none";
+			    }
+				
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+			        tablinks[i].className = tablinks[i].className.replace("highlight", "");
+			    }
+				
+				document.getElementById($(this).val()+"Show").style.display = "block";
+				event.currentTarget.className += " highlight";
+			}); 
+			
+	});
+
+	function openConsist(trainId) {
+		window.location.href = './trainConsist.html' + '#' + trainId;
+	}
+	
+	
+	function openDeparture(trainId) {
+		window.location.href = './locomotiveDepartureReport.html' + '#' + trainId;
+	}
+	
+	
+	function openEmpVerification(eId) {
+		window.location.href = './employeeRequest.html' + '#' + eId;
+	}
+	
+	
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid" style="height: 8em;">
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">Crew Initialization Back Office Server</div>
+     <img src="../dist/custom/images/tesco.jpg" class="logo" style="margin-top: -42px;">
+	<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo2" style="margin-top: -45px;margin-left: -15px;">
+          <div class="header_menu" style="margin-top: -9px;">
+          
+        <div class="tab">
+        <button class="tablinks highlight" value="dashboard" id="dashboard"><a style="font-size:18px">Dashboard</a></button>
+  		<button class="tablinks" value="trainAtGlance" id="trainAtGlance"><a style="font-size:18px">Trains at a Glance</a></button>
+  		<button class="tablinks" value="trainConsist" id="trainConsist"><a style="font-size:18px">Consist</a></button>
+  		<button class="tablinks" value="crewAuth" id="crewAuth"><a style="font-size:18px">Crew Auth</a></button>
+  		
+  		<!-- 
+  		<button class="tablinks" value="faultReport" id="faultReport"><a style="font-size:18px">Fault Report</a></button> -->
+               		<span style="margin-left: 50%;"><a style="font-size:18px" class = "board" href="./helpMsg.html">Help</a> &nbsp;|</span>
+					<span><a  style="font-size:18px" class = "board"  href="./index.html" style="margin-right: -55px;">Logout</a> </span>               
+            </div>
+        </div>
+        </div>
+</nav>
+<div id="content" class="jumbotron"  style="padding-top: 27px;">
+
+	<div class="supplier-div welcome_inner"><br>
+	
+		 <br><br><br>
+			
+			<!-- <div id="dashboardShow" class="tabcontent" style="width:40%;height:15%">
+			  	<canvas id="bar-chart" width="800" height="450"></canvas>
+			</div>
+			 -->
+			<div id="dashboardShow" class="tabcontent" style="width:40%;height:15%">
+			<span style="margin-top: -60px; margin-left: 8%;">Welcome Admin! Your last login was on Nov 14, 2017 17:47:09 </span><br>	<br><br>
+				<table style="margin-top: -5px;">
+					<tr>
+			  		<td style="border: 0px"><canvas id="bar-chart" width="540px" height="450px"></canvas></td>
+			  		<td style="border: 0px"><canvas id="pie-chart" width="740px" height="450px"></canvas></td>
+			  		</tr>
+			  	</table>	
+			</div>
+			
+			<div id="trainAtGlanceShow" class="tabcontent">
+			
+			 	<table id="trainAtGlanceTable">
+	       			<tr>
+			            <th>SI No</th>
+			            <th>Date & Time</th>
+			            <th>Train ID</th>
+			            <th>Loco ID</th>
+			            <th>Crew</th>
+			            <th>Details</th>
+	   				</tr>
+				</table>
+			</div>
+
+			<div id="trainConsistShow" class="tabcontent">
+			 	<table id="trainConsistTable">
+	    			<tr>
+			           <th>SI No</th>
+			            <th>Date & Time</th>
+			            <th>Train ID</th>
+			            <th>Loco ID</th>
+			            <th>Crew</th>
+			            <th>Clearance#</th>
+			            <th>Last Modified</th>
+					</tr>
+				</table>
+			</div>
+
+			<div id="crewAuthShow" class="tabcontent">
+			 	 <table id="crewAuthTable">
+	    			<tr>
+			           <th>SI No</th>
+			            <th>Date & Time</th>
+			            <th>Crew Name</th>
+			            <th>Reason for Auth</th>
+			            <th>Status</th>
+			            <th>Train ID</th>
+			            <th>Loco ID</th>
+			            <th>ONB s/w ver</th>
+					</tr>
+				</table>
+			</div>
+			
+		<br><br>
+	</div>
+</div>
+	<div id="footer" class="footer_class" style="margin-bottom: -200px;">
+	<p class="footer_dashboard"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#" >Contact Us</a> |
+	<a href="#" >Site Map</a> | <a href="#">Feedback Report</a> | <a href="#">General Inquiries</a>
+&copy; 2017 Tech Mahindra. All Rights Reserved.</p>
+
+
+</div>
+
+
+</body>
+</html> 

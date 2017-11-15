@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/employeResponse.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+$(document).ready(function() {	
+	$("#empConfirmation").hide();
+	postEmployeeVerificationData();
+	//getEmployeeVerificationResponse();
+	
+	//verifyEmployeeResponse();
+	displayOnSubmit();
+	closeEmpVer();
+});
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid" style="height: 8em;">
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">Crew Initialization Back Office Server</div></a>
+     <img src="../dist/custom/images/tesco.jpg" class="logo" style="margin-top: -42px;">
+	<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo2" style="margin-top: -45px;margin-left: -15px;">   
+        </div>
+</nav>
+<!-- 	<div>
+		<br> <span class="category_title">Verify Employee Info Request 02000 </span> <br> <br>
+	</div> -->
+	<div id="content" class="jumbotron">
+	
+<div class="supplier-div welcome_inner" >
+<span class="category_title" style="margin-right: 3em"><u>Verify Employee Info Request (02000) </u></span><br><br>
+	<!-- <div id="verify_request_content" class="jumbotron"> -->
+		<div style="width: 27%; float: left; margin-left: 7%;">
+		<br>
+			<b> <span class="line_height">Railroad SCAC  :</span><br> <br>
+				<span class="line_height">ICD Version  :</span><br> <br>
+				<span class="line_height">Reason for Sending  :</span><br> <br>
+				<span class="line_height">Employee Identifier  :</span><br> <br>
+				<span class="line_height">Encrypted Employee Pin  :</span><br> <br>					
+			</b>
+		</div>
+		
+		<br>
+		<input type="text" id="scacReq" size="25" readonly="readonly"><br> <br>
+		<input type="text" id="icd" size="25" readonly="readonly"><br> <br>
+		<input type="text" id="reason" size="25" readonly="readonly"><br> <br>		
+		<input type="text" id="empIdReq" size="25" readonly="readonly"><br> <br> 
+		<input id="empPin" size="25" type="password" readonly="readonly"><br> <br>				
+		
+		<div class="btn-group">
+		<br>
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 3em"><b>Response</b></button>
+		</div>
+		
+	<!--  -->
+	
+	<div id="empConfirmation">
+	<span class="category_title" style="margin-right: 3em"><u>Employee Info
+			Response (01000) </u></span><br><br>
+	<div style="width: 27%; float: left; margin-left: 7%;" >
+			<b> <span >Railroad SCAC : </span><br> <br>
+				<span >Verification Status :</span><br> <br>
+				<span >Reason Text :</span><br> <br>
+				<div id="empDtlFlds">
+					<span >Employee Identifier :</span><br> <br>
+					<span>Employee First Name :</span><br> <br>
+					<span>Employee Middle Initial :</span><br> <br>
+					<!-- <span class="line_height">Employee Last Name :</span><br> -->
+					<span>Employee Last Name :</span>
+					<br>
+				</div>
+			</b>
+		</div>
+		<span id="scac"></span> <br><br>
+		<span id="status"> </span> <br> <br> 
+		<span id="reasonText"> </span><br> <br> 
+		<div id="empDtlVal">
+			<span id="empId"></span> <br> <br> 
+			<span id="firstName"> </span><br> <br>
+			<span id="midName"> </span> <br> <br> 
+			<span id="lastName"></span> <br> <br>
+		</div>	
+		
+	</div>			
+	</div>	
+		
+		<div class="btn-group" style="margin-bottom: -10px;margin-left: -27px;">
+		<br>
+		<button class="btn btn-default submit_butt" id="backButton" style="margin-left: 3em;margin-top: -14px; "><b>Back</b></button>
+		</div>	
+</div>
+<div id="footer" class="footer_class" style="margin-bottom: -240px;">
+	<p class="footer_dashboard"><a href="./Terms.html">Terms of Use</a> | <a href="./Privacy.html">Privacy Policy</a> | <a href="./Contact.html">Contact Us</a> |
+	<a href="./Site.html">Site Map</a> | <a href="./Feedback.html">Feedback Report</a> | <a href="./Inquiry.html">General Inquiries</a>
+© 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>	
+</body>
+</html>

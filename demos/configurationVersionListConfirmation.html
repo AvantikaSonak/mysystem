@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/configurationVersion.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+	$(document).ready(function() {	
+		configVersionResponse();
+	});
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid" style="height: 8em;">
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">CI BOS and LOCO System</div></a>
+     <img src="../dist/custom/images/tesco.jpg" class="logo" style="margin-top: -42px;">
+	<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo2" style="margin-top: -45px;margin-left: -15px;">
+          <div class="header_menu" style="margin-top: -10px;">			
+					
+                 <a class = "board" style="margin-left: 5%;" href="./dashboard2.html">Dashboard</a>   
+               	<a class = "board" style="margin-left: 5%;" href="./helpMsg.html">Help</a>
+					<a  class = "board"  href="./index.html">Logout</a>               
+            </div>
+        </div>
+</nav>
+	<div id="content" class="jumbotron" >
+	<span class="category_title" style="margin-right: 3em"><u>Configuration Version List (01005)</u></span><br><br>
+<div class="supplier-div welcome_inner">
+		<div style="width: 27%; float: left; margin-left: 7%;">
+			<b> <span >Railroad SCAC : </span><br> <br>
+				<span >Repository Name :</span><br> <br>
+				<span >Fileset Version :</span><br> <br>
+				<span >Fileset MD5 :</span><br> <br>
+				<span >Fileset Status :</span><br> <br>
+				
+			</b>
+		</div>
+		<span id="scac"></span> <br><br>
+		<span id="repo"> </span> <br> <br> 
+		<span id="fileSet"> </span><br> <br> 
+		<span id=""> </span><br> <br>
+		<span id=""> </span><br> <br>
+		
+		</div>
+		</div>
+	<div>
+	
+<div id="footer" class="footer_class">
+	<p class="footer_dashboard"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#" >Contact Us</a> |
+	<a href="#" >Site Map</a> | <a href="#">Feedback Report</a> | <a href="#">General Inquiries</a>
+&copy; 2017 Tech Mahindra. All Rights Reserved.</p>
+
+
+<!--<p class="footer_2">Terms of Use | Privacy Policy | Contact Us | Site Map | Feedback Report | General Inquiries
+Ã‚Â© 2016 Tech Mahindra. All Rights Reserved.</p>-->
+</div>		
+		
+</body>
+</html>

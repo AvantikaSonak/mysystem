@@ -1,0 +1,15 @@
+[{
+	"reason": "Response to locomotive request with CAD provided consist",
+	"scac": "RRAA",
+	"trainType": "Freight",
+	"orientation": "Front",
+	"locomotiveId": {},
+	"trailTonnage": "100 tons",
+	"numBrakes": "1",
+	"numAxles": "1",
+	"trainLength": "200 ft",
+	"loadedCar": "1",
+	"emptyCar": "0",
+	"brakingForce": "Calculated Onboard",
+	"maxSpeed": "70 MPH"
+}]

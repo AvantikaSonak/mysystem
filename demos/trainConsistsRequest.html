@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/trainConsists.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+$(document).ready(function(){
+	trainConsistRequest();
+});
+</script>
+</head>
+<body>
+<!-- <div class="container"> -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid" style="height: 8em;">
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">CI BOS and LOCO Dashboard</div></a>
+     <img src="../dist/custom/images/tesco.jpg" class="logo" style="margin-top: -42px;">
+	<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo2" style="margin-top: -45px;margin-left: -15px;">
+          <div class="header_menu" style="margin-top: -10px;">			
+					<div class="btn-group">
+                        <button type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" class="btn btn-default dropdown-toggle products_button">
+                            Main Menu
+                            <Action></Action>
+                            <span class="caret caret_spacing"></span></button>
+                        <ul class="dropdown-menu">
+							<li><a href="./employeeRequest.html">Employee Authentication</a></li>
+
+							<!-- <li><a href="./onboardComponentConfigRequest.html">Component Configuration - Onboard</a></li>
+							<li><a href="./xvz.html">Configuration Version List</a></li> -->
+                            
+                            <li><a href="./trainConsistsRequest.html">Train Consist</a></li>
+							<li><a href="./onBoardTrainConsist.html">Train Consist - Onboard</a></li>
+							
+							<li><a href="./requestTrainList.html">Train ID List</a></li>
+							<li><a href="./trainIdDetails.html">Train ID - Selected</a></li>
+							
+							<li><a href="./requestTrainSubDivisionList.html">Sub Division Details</a></li>
+							<li><a href="./locomotivedeparturereport.html">Departure Test</a></li>					
+							
+                        </ul>
+                    </div>
+               	<a class = "board" style="margin-left: 5%;" href="./helpMsg.html">Help</a>
+					<a  class = "board"  href="./index.html">Logout</a>               
+            </div>
+        </div>
+</nav>
+
+<div id="content" class="jumbotron">
+	<span class="category_title" style="margin-right: 3em"><u>Request Train Consist (02030) </u></span><br><br>
+<div class="supplier-div welcome_inner">
+		<div style="width: 17%; float: left; margin-left: 7%;"><br>
+			<b> <span class="line_height">Railroad SCAC  :</span><br> <br>
+				<span class="line_height">Train ID :</span><br> <br>									
+			</b>
+		</div>
+		<div id="trainInfoSubmit"><br>
+		<input type="text" id="scacReq" size="25" placeholder="aewef" readonly="readonly"><br> <br>
+		<input type="text" id="trainId" size="25" placeholder="qef" readonly="readonly"><br> <br>				
+		</div>		
+		<div class="btn-group">
+		<br>
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 40em"><b>Submit</b></button>
+		</div>
+	</div>		
+	</div>	
+	<div id="footer" class="footer_class" style="margin-bottom: -40px;">
+	<p class="footer_2"><a href="./Terms.html">Terms of Use</a> | <a href="./Privacy.html">Privacy Policy</a> | <a href="./Contact.html">Contact Us</a> |
+	<a href="./Site.html">Site Map</a> | <a href="./Feedback.html">Feedback Report</a> | <a href="./Inquiry.html">General Inquiries</a>
+© 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>
+</body>
+</html>

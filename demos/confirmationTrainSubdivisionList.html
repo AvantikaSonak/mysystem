@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<!--[if lte IE 9]>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.0/jquery.xdomainrequest.min.js'></script>
+<![endif]-->
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/trainSubDivisionResponse.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+
+	$(document).ready(function() {		
+		confirmationTrainSubdivision();		
+	});
+</script>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">	
+		<div class="container-fluid" style="height: 7em;" id="empResp">
+		<div id="caption1"> <span >Place holder for page title</span></div>
+			<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo3">
+			<img src="../dist/custom/images/tesco.jpg" class="logo_dashboard">
+		</div>	
+	</nav>		
+		 <div><br> <span class="category_title" >Confirmation of Selected Train ID  01004 </span> <br> <br>  </div>
+		 <div id="verify_request_content" class="jumbotron" > 
+				<div style="width: 21%; float: left; margin-left: 7%;">
+					<b>
+						<span class="line_height" >Railroad SCAC : </span><br> <br>
+						<span class="line_height">PTC Confirmation Subdivision/District ID :</span><br>					
+						<span class="line_height">Acknowledgement Indication :</span><br> <br>
+					</b> 					
+				</div>
+				<input type="text" id="trainSubdivisionScac"   size="25"> <br> <br> 
+				<input type="text" id="ptcConfirmation"  size="25"><br> <br>
+				<input type="text" id="acknowledgementIndication"   size="25"><br> <br> 
+				
+			</div>				
+	<div id="footer" class="footer_class">
+	<p class="footer_dashboard"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#" >Contact Us</a> |
+	<a href="#" >Site Map</a> | <a href="#">Feedback Report</a> | <a href="#">General Inquiries</a>
+&copy; 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

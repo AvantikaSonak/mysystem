@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<!--[if lte IE 9]>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.0/jquery.xdomainrequest.min.js'></script>
+<![endif]-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/employeResponse.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+	$(document).ready(function() {		
+		$("#reqHtml").appendTo('body').load("employeeRequest.html");
+		$("#respHtml").appendTo('body').load("employeeResponse.html");
+	});
+</script>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">	
+		<div class="container-fluid" style="height: 6em;" id="empResp">
+		<div id="caption1"> <span >Employee Verification</span></div>
+			<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo3">
+			<img src="../dist/custom/images/tesco.jpg" class="logo_dashboard">
+		</div>	
+	 </nav>		
+	<!--	 <div><br> <span class="category_title" >Verify Employee Info Response 01000 </span> <br> <br>  </div>
+		 <div id="verify_request_content" class="jumbotron" > 
+				<div style="width: 21%; float: left; margin-left: 7%;">
+				<b>
+					<span class="line_height" >Railroad SCAC : </span><br> <br>
+					<span class="line_height">Verification Status :</span><br> <br>					
+					<span class="line_height">Reason Text :</span><br> <br>
+					<div id="empDtlFlds">
+						<span class="line_height">Employee Identifier :</span><br> <br>
+						<span class="line_height">Employee First Name :</span><br> <br>
+						<span class="line_height">Employee Middle Initial :</span><br> <br> 
+						<span class="line_height">Employee Last Name :</span><br> <br>
+					</div>
+					</b> 					
+				</div>
+				<input type="text" id="scac"   size="25" placeholder=""> <br> <br> 
+				<input type="text" id="status"  size="25"><br> <br>
+				<input type="text" id="reasonText"   size="25"><br> <br> 
+				<div id="empDtlVal">
+					<input type="text" id="empId" size="25"><br>	<br>
+					<input type="text" id="firstName" size="25"><br> <br>
+					<input type="text" id="midName" size="25"><br> <br>
+					<input type="text" id="lastName" size="25"><br> <br>			
+				</div>
+			</div> 	
+	   		-->
+	   	<!-- <div id="reqHtml">	
+	   	</div>
+	   	<div id="respHtml">	
+	   	</div> -->
+	   	
+	   <!-- 	<div class="container">
+	    <div class="row">
+  			<div class="col-xs-7" id="reqHtml">First Div</div>
+  			<div class="col-xs-6" id="respHtml">Second DIV </div>
+		</div> 
+	   	</div> -->
+	   	
+	   	<div style="width: 100%; display: table;">
+    	<div style="display: table-row">
+    	<div id="reqHtml">  </div>
+        	<div style="width: 700px; display: table-cell;" id="reqHtml">  </div>
+        	<div style="width: 700px; display: table-cell;" id="respHtml" >  </div>
+    	</div>
+</div>
+	   	
+	   	
+	   	<!-- 	
+					
+		<div id="navButtons">
+		<button>Previous</button>
+		
+		<button style="margin-left: 86em">Next</button> -->
+		
+	<div id="footer" class="footer_class">
+	<p class="footer_2"><a href="./Terms.html">Terms of Use</a> | <a href="./Privacy.html">Privacy Policy</a> | <a href="./Contact.html">Contact Us</a> |
+	<a href="./Site.html">Site Map</a> | <a href="./Feedback.html">Feedback Report</a> | <a href="./Inquiry.html">General Inquiries</a>
+© 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>
