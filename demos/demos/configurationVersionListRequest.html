@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/configurationVersion.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+$(document).ready(function(){
+	configVersionRequest();
+});
+</script>
+</head>
+<body>
+<!-- <div class="container"> -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid" style="height: 8em;">
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">CI BOS and LOCO Dashboard</div></a>
+     <img src="../dist/custom/images/tesco.jpg" class="logo" style="margin-top: -42px;">
+	<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo2" style="margin-top: -45px;margin-left: -15px;">
+          <div class="header_menu" style="margin-top: -10px;">			
+					<div class="btn-group">
+                        <button type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" class="btn btn-default dropdown-toggle products_button">
+                            Main Menu
+                            <Action></Action>
+                            <span class="caret caret_spacing"></span></button>
+                        <ul class="dropdown-menu">
+							<li><a href="./employeeRequest.html">Employee Authentication</a></li>
+
+							<li><a href="./onboardComponentConfigRequest.html">Component Configuration - Onboard</a></li>
+							<li><a href="./configurationVersionListRequest.html">Configuration Version List</a></li>
+                            
+                            <li><a href="./trainConsistsRequest.html">Train Consist</a></li>
+							<li><a href="./onBoardTrainConsist.html">Train Consist - Onboard</a></li>
+							
+							<li><a href="./requestTrainList.html">Train ID List</a></li>
+							<li><a href="./trainIdDetails.html">Train ID - Selected</a></li>
+							
+							<li><a href="./requestTrainSubDivisionList.html">Sub Division Details</a></li>
+							<li><a href="./locomotivedeparturereport.html">Departure Test</a></li>					
+							
+                        </ul>
+                    </div>
+               	<a class = "board" style="margin-left: 5%;" href="./helpMsg.html">Help</a>
+					<a  class = "board"  href="./index.html">Logout</a>               
+            </div>
+        </div>
+</nav>
+
+<div id="content" class="jumbotron">
+	<span class="category_title" style="margin-right: 3em"><u>Configuration Version List Request (02005) </u></span><br><br>
+<div class="supplier-div welcome_inner">
+		<div style="width: 17%; float: left; margin-left: 7%;margin-top:15px ;">
+			<b> <span class="line_height">Railroad SCAC  :</span><br> <br>
+				<span class="line_height">ICD Version :</span><br> <br>	
+				<span class="line_height">Repo Details :</span><br> <br>	
+				<span class="line_height">Count :</span><br> <br>
+				<span class="line_height">Name :</span><br> <br>								
+			</b>
+		</div>
+		<div id="trainInfoSubmit">
+		<input type="text" id="scacReq" size="25"  style="margin-top:15px ;"><br> <br>
+		<input type="text" id="icd" size="25"><br> <br>	<br><br>
+		<input type="text" id="count" size="25" placeholder="1"><br> <br>		
+		<input type="text" id="repoName" size="25" placeholder="RepoName"><br> <br>	
+			
+		</div>		
+		<div class="btn-group">
+		<br>
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 300px;"><b>Submit</b></button>
+		</div>
+	</div>		
+	</div>
+	<div>
+<div id="footer" class="footer_class">
+	<p class="footer_dashboard"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#" >Contact Us</a> |
+	<a href="#" >Site Map</a> | <a href="#">Feedback Report</a> | <a href="#">General Inquiries</a>
+&copy; 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>
+
+
+<!--<p class="footer_2">Terms of Use | Privacy Policy | Contact Us | Site Map | Feedback Report | General Inquiries
+Ã‚Â© 2016 Tech Mahindra. All Rights Reserved.</p>-->
+</div>	
+</body>
+</html>

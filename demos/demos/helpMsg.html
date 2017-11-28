@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../src/dashboard.js"></script> 
+    <link rel="stylesheet" href="../dist/custom/style.css">
+    <link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+   
+    <script type="application/javascript">
+	$(document).ready(function() {	
+		$("#dashboard").click(function(){
+			window.location = './dashboard.html';
+	    }
+	    );
+			
+	});
+
+	
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default" style="border-style: none;">
+    <div class="container-fluid" style="height: 10em;" >
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">Crew Initialization Back Office Server</div>
+	<img src="../dist/custom/images/aslrra.png" class="headerLogo" style="margin-top: -40px;margin-left: -16px;">
+          <div class="header_menu" style="margin-top: -3px;">
+          
+        <div class="tab" style="margin-top: 1%;">
+        <button class="tablinks" value="dashboard" id="dashboard" onclick="gotoDashBoard()"><a style="font-size:15px"><b>Dashboard</b></a></button>
+  		
+               		<a style="font-size:15px;" href="./index.html"> <button style="float: right; padding-right: 53px;" class="tablinks" value="crewAuth" id="help"><b>Logout</b></button></a>          
+					<a href="./helpMsg.html" style="font-size:15px;"><button style="float: right;" class="tablinks" value="crewAuth" id="help"><b>Help</b></button></a>                               
+            </div>
+        </div>
+        </div>
+</nav>
+	<div id="content" class="jumbotron" >
+	<span class="category_title" style="margin-right: 3em">Page is under Development</span><br><br>
+<div class="supplier-div welcome_inner">
+		</div>
+		</div>
+		
+<div id="footer" class="footer_class" style="margin-bottom: -2%;">
+	<p class="footer_dashboard"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#" >Contact Us</a> |
+	<a href="#" >Site Map</a> | <a href="#">Feedback Report</a> | <a href="#">General Inquiries</a>
+&copy; 2017 ASLRRA. All Rights Reserved.</p>
+</div>	
+		
+</body>
+</html>

@@ -1,0 +1,1 @@
+var baseUrl = "http://10.53.17.48:53905/CIBOSSServices//";

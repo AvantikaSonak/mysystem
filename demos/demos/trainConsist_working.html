@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<!--[if lte IE 9]>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.0/jquery.xdomainrequest.min.js'></script>
+<![endif]-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="../src/trainConsists.js"></script> -->
+<script src="../src/trainConsists.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script type="application/javascript">
+	$(document).ready(function() {		
+		trainConsistData();
+		ackTrainConsistData();
+	});
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+    <div class="container-fluid" style="height: 8em;">
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">Crew Initialization Back Office Server</div></a>
+     <img src="../dist/custom/images/tesco.jpg" class="logo" style="margin-top: -42px;">
+	<img src="../dist/custom/images/big_thumb_paint.jpg" class="logo2" style="margin-top: -45px;margin-left: -15px;">
+          <div class="header_menu" style="margin-top: -10px;">			
+					
+                 <a class = "board" style="margin-left: 5%;" href="./dashboard.html">Dashboard</a>   
+               	<a class = "board" style="margin-left: 5%;" href="./helpMsg.html">Help</a>
+					<a  class = "board"  href="./index.html">Logout</a>               
+            </div>
+        </div>
+</nav>		
+
+<div id="content" class="jumbotron verify_emp" style="">
+
+<div class="supplier-div verify_emp_inner"><br>
+	<span class="category_title"><u>Train Consist (01030)</u></span>
+	<br><br>
+        <!-- <hr class="hr_divider"> -->
+<div style="width:50%;float:left">
+<div style="width:43%;float:left;margin-left:7%;">
+<span class="line_height">Reason for sending</span> <br><br>
+ <span class="line_height">Railroad SCAC</span><br><br>
+  <span class="line_height" >Train Type</span><br><br>
+  <span class="line_height">Lead Locomotive Orientation</span><br><br>
+    <span class="line_height">Locomotive ID </span><br><br>
+	  <span class="line_height">Locomotive Position in Train </span><br><br>
+	    <span class="line_height">Tonnage of Locomotive </span><br><br>
+		  <span class="line_height">Locomotive Status </span><br><br>
+		<span class="line_height">Locomotive Length </span><br><br>
+		<span class="line_height">Locomotive Horsepower </span><br><br>
+  
+</div>
+
+    <input type="text" id="reason" readonly="readonly"><br><br>
+		     <input type="text" id="scac" readonly="readonly"><br><br>			
+             	 <input type="text" id="trainType" readonly="readonly"><br><br>
+				  <input type="text" id="orientation" readonly="readonly"><br><br>				
+				 <input type="text" id="LocoId" readonly="readonly"><br><br>
+				  <input type="text" id="locoPos" readonly="readonly"><br><br>				
+				 <input type="text" id="locoTon" readonly="readonly"><br><br>
+			     <input type="text" id="locoStatus" readonly="readonly"><br><br>
+				 <input type="text" id="locoLength" readonly="readonly"><br><br>
+				 <input type="text" id="locoHorse" readonly="readonly"><br><br> 				
+				  
+ </div>
+ <div style="width:50%; float:left;" >
+<div style="width:43%;float:left;margin-left:7%;">
+	
+			<span class="line_height">Trailing Tonnage </span><br><br>
+				  <span class="line_height">Number of Operative Brakes </span><br><br>
+				    <span class="line_height">Number of Axles </span><br><br>
+					  <span class="line_height">Train Length </span><br><br>
+					    <span class="line_height">Loaded Car Count</span><br><br>
+						  <span class="line_height">Empty Car Count</span><br><br>
+						    <span class="line_height">Total Braking Force </span><br><br>
+							  <span class="line_height">Maximum Train Speed</span><br><br>  
+</div>
+		     <input type="text" id="trailTonnage" readonly="readonly"><br><br>
+					 <input type="text" id="numBrakes" readonly="readonly"><br><br>
+					  <input type="text" id="numAxles" readonly="readonly"><br><br>					
+					 <input type="text" id="trainLength" readonly="readonly"><br><br>
+					  <input type="text" id="loadedCar" readonly="readonly"><br><br>
+					  <input type="text" id="emptyCar" readonly="readonly"><br><br>
+					  <input type="text" id="brakingForce" readonly="readonly"><br><br>
+					<input type="text" id="maxSpeed" readonly="readonly"><br><br> 
+ </div>
+ <br>
+ 
+ <!-- <div class="btn-group" style="margin-bottom: -110px;margin-left: -60px;">
+		<br><br>
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 1em"><b>Acknowledge Data</b></button>
+		</div>
+ </div> -->
+ 
+ <div class="btn-group" style="margin-bottom: -110px;margin-left: -60px;">
+		<br><br>
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 1em"><b>Back</b></button>
+		</div>
+ </div>
+</div>
+	<div id="footer" class="footer_class" style="margin-bottom: -200px;">
+	<p class="footer_2"><a href="./Terms.html">Terms of Use</a> | <a href="./Privacy.html">Privacy Policy</a> | <a href="./Contact.html">Contact Us</a> |
+	<a href="./Site.html">Site Map</a> | <a href="./Feedback.html">Feedback Report</a> | <a href="./Inquiry.html">General Inquiries</a>
+© 2017 Tech Mahindra. All Rights Reserved.</p>
+</div>
+
+</body>
+</html>

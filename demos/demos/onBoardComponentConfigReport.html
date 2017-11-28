@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/baseUrl.js"></script>
+<script src="../src/softwareCompatibility.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script type="application/javascript">
+	
+	$(document).ready(function() {		
+		componentConfigReport();
+		backToReport();
+	});
+
+</script>
+</head>
+<body>
+
+	<nav class="navbar navbar-default" style="border-style: none;">
+		<div class="container-fluid" style="height: 10em;">
+
+			<div id="caption1">Crew Initialization Back Office Server</div>
+			<img src="../dist/custom/images/aslrra.png" class="headerLogo"
+				style="margin-top: -40px; margin-left: -16px;">
+			<div class="header_menu" style="margin-top: -3px;">
+
+				<div class="tab" style="margin-top: 1%;">
+					<button class="tablinks" value="dashboard" id="dashboard"
+						onclick="gotoDashBoard()">
+						<a style="font-size: 15px"><b>Dashboard</b></a>
+					</button>
+
+					<a style="font-size: 15px;" href="./index.html">
+						<button style="float: right; padding-right: 53px;"
+							class="tablinks" value="crewAuth" id="help">
+							<b>Logout</b>
+						</button>
+					</a> <a href="./helpMsg.html" style="font-size: 15px;"><button
+							style="float: right;" class="tablinks" value="crewAuth" id="help">
+							<b>Help</b>
+						</button></a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+	<div id="content" class="jumbotron">
+		<span class="category_title" style="margin-right: 5em"><u>Onboard
+				Component Configuration Report</u></span>
+		<!-- <br><br> -->
+		<div class="supply-div welcome_inner">
+			<div style="width: 27%; float: left; margin-left: 5%;"></div>
+			<div id="verify_request_content" class="jumbotron" id="requestDiv">
+
+				<table>
+					<tr>
+						<td style="width: 20%;"><span class="line_height">Railroad
+								SCAC :</span></td>
+						<td style="width: 30%;"><span id="scac"> </span></td>
+						<td style="width: 20%;"><span class="line_height">Reason
+								for sending :</span></td>
+						<td
+							style="text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word; width: 30%;">
+							<span id="reason"></span>
+						</td>
+					</tr>
+					<tr>
+						<td style="width: 20%;"><span class="line_height">Vendor
+								Code :</span></td>
+						<td style="width: 30%;"><span id="vendorCode"> </span></td>
+						<td style="width: 20%;"><span class="line_height">System
+								Code :</span></td>
+						<td
+							style="text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word; width: 30%;">
+							<span id="systemCode"></span>
+						</td>
+					</tr>
+					<tr>
+						<td style="width: 20%;"><span class="line_height">ICD
+								Version :</span></td>
+						<td
+							style="text-overflow: ellipsis; word-wrap: break-word; overflow-wrap: break-word; width: 30%;">
+							<span id="icdVersion"></span>
+						</td>
+						<td colspan=2></td>
+					</tr>
+				</table>
+
+				<br> <br> <span class="category_title"
+					style="margin-left: -10px">Software Components </span><br>
+
+				<table id="componentDetails" style="width: 50%;">
+				</table>
+			</div>
+		</div>
+		<div class="btn-group" style="margin-bottom: -15px; margin-left: 4%;">
+			<button class="btn btn-default submit_butt" id="backButton"
+				style="margin-left: 5%">
+				<b>Back</b>
+			</button>
+		</div>
+	</div>
+
+
+	<div id="footer" class="footer_class" style="margin-bottom: -5%;">
+		<p class="footer_dashboard">
+			<a href="./Terms.html">Terms of Use</a> | <a href="./Privacy.html">Privacy
+				Policy</a> | <a href="./Contact.html">Contact Us</a> | <a
+				href="./Site.html">Site Map</a> | <a href="./Feedback.html">Feedback
+				Report</a> | <a href="./Inquiry.html">General Inquiries</a> © 2017
+			ASLRRA. All Rights Reserved.
+		</p>
+	</div>
+
+</body>
+</html>

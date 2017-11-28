@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/baseUrl.js"></script>
+<script src="../src/departureReport.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+$(document).ready(function(){    
+	departureTestReport();
+	closeDepartureTest();
+});
+</script> 
+</head> 
+<body>
+<nav class="navbar navbar-default" style="border-style: none;">
+    <div class="container-fluid" style="height: 10em;">       
+            <div id="caption1">Crew Initialization Back Office Server</div>
+	<img src="../dist/custom/images/aslrra.png" class="headerLogo" style="margin-top: -40px;margin-left: -16px;">
+          <div class="header_menu" style="margin-top: -3px;">          
+        <div class="tab" style="margin-top: 1%;">
+        <button class="tablinks" value="dashboard" id="dashboard" onclick="gotoDashBoard()"><a style="font-size:15px"><b>Dashboard</b></a></button>  		
+               		<a style="font-size:15px;" href="./index.html"> <button style="float: right; padding-right: 53px;" class="tablinks" value="crewAuth" id="help"><b>Logout</b></button></a>          
+					<a href="./helpMsg.html" style="font-size:15px;"><button style="float: right;" class="tablinks" value="crewAuth" id="help"><b>Help</b></button></a>                
+            </div>
+        </div>
+        </div>
+</nav>
+
+<div id="content" class="jumbotron">
+	<span class="category_title" style="margin-right: 3em"><u>Departure Test Report </u></span><br><br>
+<!-- <div class="supplier-div welcome_inner"> -->
+<div class="supply-div welcome_inner">
+	<div style="width: 27%; float: left; margin-left: 5%;"> </div>
+	
+	<div id="verify_request_content" class="jumbotron" id="requestDiv">			
+	
+		<table>
+		<tr>
+		<td>	
+		<span class="line_height">Railroad SCAC  :</span>	
+		</td>
+		<td>
+		<span id="scacReq"></span>
+		</td>		
+		<td>
+		<span class="line_height">ICD Version  :</span>
+		</td>
+		<td>
+		<span id="icd"></span>
+		</td>
+		</tr>		
+		<tr>
+		<td>
+		<span class="line_height">Train ID  :</span>
+		</td>
+		<td>
+		<span type="text" id="trainId" size="25"></span>
+		</td>		
+		<td>
+		<span class="line_height">Milepost  :</span>
+		</td>
+		<td>
+		<span type="text" id="milepost" size="25"></span>
+		</td>
+		</tr>		
+		<tr>
+		<td>
+		<span class="line_height">Milepost Prefix  :</span>
+		</td>
+		<td>
+		<span type="text" id="milepostPrfx" size="25"></span>
+		</td>		
+		<td>
+		<span class="line_height">Milepost Suffix  :</span>
+		</td>
+		<td>
+		<span type="text" id="milepostSfx" size="25"></span>
+		</td>
+		</tr>		
+		<tr>
+		<td>
+		<span class="line_height">Track name  :</span>
+		</td>
+		<td>
+		<span type="text" id="trakNm" size="25"></span>
+		</td>
+		<td>
+		<span class="line_height">Current Position Railroad SCAC  :</span>
+		</td>
+		<td>
+		<span type="text" id="currentPosScac" size="25"></span>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<span class="line_height">PTC Subdivision / District ID  :</span>
+		</td>
+		<td>
+		<span type="text" id="ptcSubdiv" size="25"></span>
+		</td>
+		<td>
+		<span class="line_height">Current Position Uncertainty  :</span>
+		</td>
+		<td>
+		<span type="text" id="currentPosUncty" size="25"></span>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<span class="line_height">Current Position(ECEF)  :</span>
+		</td>
+		<td>
+		<span type="text" id="currentPos" size="25"></span>
+		</td>
+		<td>
+		<span class="line_height">Test Time Stamp :</span>
+		</td>
+		<td>
+		<span type="text" id="testTmStmp" size="25"></span>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<span class="line_height">Test Status :</span>
+		</td>
+		<td>
+		<span type="text" id="testStatus" size="25"></span>
+		</td>
+		<td>
+		<span class="line_height">Employee ID :</span>
+		</td>
+		<td>
+		<span type="text" id="empId" size="25"></span> 
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<span class="line_height">Locomotive State Summary :</span>
+		</td>
+		<td>
+		<span type="text" id="locStateSummary" size="25"></span>
+		</td>
+		<td>
+		<span class="line_height">Onboard Software Version:</span>
+		</td>
+		<td>
+		<span type="text" id="onBoardSWVer" size="25"></span>
+		</td>
+		</tr>
+		
+		</table>	
+		  </div> 
+		<div class="btn-group" style="margin-bottom: -10px;margin-left: -40px;">
+		<br>
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 3em"><b>Back</b></button>
+		</div>
+		</div>	
+	  
+			
+	</div> 
+	</div>
+		<div id="footer" class="footer_class" style="margin-bottom: -3%;">
+	<p class="footer_dashboard"><a href="./Terms.html">Terms of Use</a> | <a href="./Privacy.html">Privacy Policy</a> | <a href="./Contact.html">Contact Us</a> |
+	<a href="./Site.html">Site Map</a> | <a href="./Feedback.html">Feedback Report</a> | <a href="./Inquiry.html">General Inquiries</a>
+© 2017 ASLRRA. All Rights Reserved.</p>
+</div>	
+</div>
+</body>
+</html>

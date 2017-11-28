@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head><title></title>
+		<meta charset="UTF-8">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+	    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	    <script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+	    <script src="../src/baseUrl.js"></script>
+	    <script src="../src/dashboard.js"></script> 
+	    <link rel="stylesheet" href="../dist/custom/style.css">
+	    <link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+	   
+	    <script type="application/javascript">
+			$(document).ready(function() {	
+				crewAuthTab();
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+			        tabcontent[i].style.display = "none";
+			    }
+				document.getElementById("crewAuthShow").style.display = "block";
+			});
+		</script>
+	</head>
+	<body>
+	<nav class="navbar navbar-default" style="border-style: none;">
+    <div class="container-fluid" style="height: 10em;" >
+        <!-- <div class=""><a href="./index.html"> -->
+            <div id="caption1">Crew Initialization Back Office Server</div>
+	<img src="../dist/custom/images/aslrra.png" class="headerLogo" style="margin-top: -40px;margin-left: -16px;">
+          <div class="header_menu" style="margin-top: -3px;">
+          
+        <div class="tab" style="margin-top: 1%;">
+        <button class="tablinks" value="dashboard" id="dashboard" onclick="gotoDashBoard()"><a style="font-size:15px"><b>Dashboard</b></a></button>
+  		<button class="tablinks" value="trainAtGlance" id="trainAtGlance" onclick="gotoTrainAtGlance()"><a style="font-size:15px"><b>Trains at a Glance</b></a></button>
+  		<button class="tablinks" value="trainConsist" id="trainConsist" onclick="gotoConsist()"><a style="font-size:15px"><b>Consist</b></a></button>
+  		<button class="tablinks highlight" value="crewAuth" id="crewAuth" onclick="gotoCrewAuth()"><a style="font-size:15px"><b>Crew Auth</b></a></button>
+               		<a style="font-size:15px;" href="./index.html"> <button style="float: right; padding-right: 53px;" class="tablinks" value="crewAuth" id="help"><b>Logout</b></button></a>          
+					<a href="./helpMsg.html" style="font-size:15px;"><button style="float: right;" class="tablinks" value="crewAuth" id="help"><b>Help</b></button></a>             
+            </div>
+        </div>
+        </div>
+</nav>
+		<div id="content" class="jumbotron"  style="padding-top: 27px;">
+			<div class="supplier-div welcome_inner"><br>
+			 	<br>
+				<div id="dashboardShow" class="tabcontent" style="display: block;text-align: center;">
+					<div style="text-align: center;">
+						<div style="width:40%;height:15%">
+							<table style="margin-top: -5px;">
+								<tr>
+						  		<td style="border: 0px;"><canvas id="bar-chart" width="550px" height="300px"></canvas></td>
+						  		<td style="border: 0px;"><canvas id="pie-chart" width="600px" height="300px"></canvas></td>
+						  		</tr>
+						  	</table>	
+						</div>
+					</div>
+				</div>
+					
+				<div id="trainAtGlanceShow" class="tabcontent">
+				 	<table id="trainAtGlanceTable">
+		      			<tr>
+				            <th>SI No</th>
+				            <th>Date & Time</th>
+				            <th>Train ID</th>
+				            <th>Loco ID</th>
+				            <th>Crew</th>
+				            <th>Details</th>
+		   				</tr>
+					</table>
+				</div>
+				<div id="trainConsistShow" class="tabcontent">
+				 	<table id="trainConsistTable">
+		    			<tr>
+				           <th>SI No</th>
+				            <th>Date & Time</th>
+				            <th>Train ID</th>
+				            <th>Loco ID</th>
+				            <th>Crew</th>
+				            <th>Clearance#</th>
+				            <th>Last Modified</th>
+						</tr>
+					</table>
+				</div>
+		
+				<div id="crewAuthShow" class="tabcontent">
+				 	 <table id="crewAuthTable">
+		    			<tr>
+				           <th>SI No</th>
+				            <th>Date & Time</th>
+				            <th>Crew Name</th>
+				            <th>Reason for Auth</th>
+				            <th>Status</th>
+				            <th>Train ID</th>
+				            <th>Loco ID</th>
+				            <th>ONB s/w ver</th>
+						</tr>
+					</table>
+				</div>
+				<br><br>
+			</div>
+		</div>
+		<div id="footer" class="footer_class" style="margin-bottom: -2%;">
+			<p class="footer_dashboard"><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#" >Contact Us</a> |
+			<a href="#" >Site Map</a> | <a href="#">Feedback Report</a> | <a href="#">General Inquiries</a>
+			&copy; 2017 ASLRRA. All Rights Reserved.</p>
+		</div>
+	</body>
+</html> 
